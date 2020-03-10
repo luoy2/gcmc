@@ -2,10 +2,10 @@ from comet_ml import Experiment
 import torch
 import yaml
 
-from src.dataset import MCDataset
-from src.model import GAE
-from src.train import Trainer
-from src.utils import calc_rmse, ster_uniform, random_init, init_xavier, init_uniform, Config
+from recommendation.gcmc.src.dataset import MCDataset
+from recommendation.gcmc.src.model import GAE
+from recommendation.gcmc.src.train import Trainer
+from recommendation.gcmc.src.utils import calc_rmse, ster_uniform, random_init, init_xavier, init_uniform, Config
 
 
 def main(config, comet=False):
@@ -40,6 +40,11 @@ def main(config, comet=False):
                 config.epochs, config.lr, config.weight_decay)
     trainer.iterate()
 
+
+## do whatever shit you want
+# debug
+'''''
+'''
 
 if __name__ == '__main__':
     with open('config.yml') as f:
